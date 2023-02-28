@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,17 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(
+    private platform: Platform
+  ) {}
+
+  start() {
+    console.log('power && heigh volume && low volume is running');
+    this.platform.backButton.closed;
+  }
+
+  stop() {
+    console.log('power && heigh volume && low volume is locked');
+  }
 
 }
